@@ -7,7 +7,6 @@ import glob
 from base64 import decodebytes
 from io import BytesIO
 import numpy as np
-import matplotlib.pyplot as plt
 
 ##########
 ##### Set up sidebar.
@@ -117,7 +116,6 @@ st.write(f'Average Confidence Level of Bounding Boxes: {(np.round(np.mean(confid
 
 ## Histogram in main app.
 st.write('### Histogram of Confidence Levels')
-fig, ax = plt.subplots()
 ax.hist(confidences, bins=10, range=(0.0,1.0))
 st.pyplot(fig)
 
