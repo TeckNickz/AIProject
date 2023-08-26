@@ -1,3 +1,4 @@
+pip install roboflow
 from roboflow import Roboflow
 rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
 project = rf.workspace().project("kitesboundingbox")
