@@ -1,1 +1,6 @@
-pipenv
+###### Requirements ######
+streamlit==0.80.0
+requests
+pillow
+numpy==1.19.2
+matplotlib==3.3.2
