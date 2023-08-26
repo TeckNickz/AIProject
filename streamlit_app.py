@@ -1,10 +1,9 @@
-import roboflow
-#rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
-#project = rf.workspace().project("kitesboundingbox")
-#model = project.version(1).model
+rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
+project = rf.workspace().project("kitesboundingbox")
+model = project.version(1).model
 
 # infer on a local image
-#print(model.predict("your_image.jpg", confidence=40, overlap=30).json())
+print(model.predict("your_image.jpg", confidence=40, overlap=30).json())
 
 # visualize your prediction
 # model.predict("your_image.jpg", confidence=40, overlap=30).save("prediction.jpg")
