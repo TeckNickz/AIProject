@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image
 import os
 
-
+@st.cache
 def load_image(uploaded_file):
     img = Image.open(uploaded_file)
     return img
@@ -21,7 +21,7 @@ def main():
     project = rf.workspace().project("kitesboundingbox")
     model = project.version(1).model
     # visualize your prediction
-    model.predict(, confidence=40, overlap=30).save("./prediction/prediction.jpg")
+    model.predict(uploaded_file, confidence=40, overlap=30).save("./prediction/prediction.jpg")
     prediction = Image.open("./prediction/prediction.jpg")
     st.image(prediction)
 if __name__ == '__main__':
