@@ -24,7 +24,7 @@ def main():
     generatebutton = st.button('Generatie prediction')
     if generatebutton:
         # visualize your prediction
-        model.predict(image, confidence=40, overlap=30).save("./prediction/prediction.jpg")
+        model.predict(image).save("./prediction/prediction.jpg")
         #prediction = Image.open("./prediction/prediction.jpg")
         #st.image(prediction)
 if __name__ == '__main__':
