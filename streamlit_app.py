@@ -22,7 +22,7 @@ def main():
         if generate_button:
             # Use the saved image for prediction
             prediction_path = os.path.join("default", uploaded_file.name)
-            model.predict(prediction_path, confidence=10, overlap=30).save("prediction.jpg")
+            model.predict(prediction_path, confidence=30, overlap=30).save("prediction.jpg")
             prediction = Image.open("prediction.jpg")
             st.image(prediction)
 
