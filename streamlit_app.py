@@ -16,7 +16,7 @@ def main():
         # Rest of your code
         rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
         project = rf.workspace().project("kitesboundingbox")
-        model = project.version(1).model
+        project.version(3).model
         generate_button = st.button('Generate prediction')
         
         if generate_button:
