@@ -21,8 +21,8 @@ def main():
     with open(os.path.join("default",uploaded_file.name),"wb") as f: 
         f.write(uploaded_file.getbuffer())  
   # visualize your prediction
-  model.predict(uploaded_file, confidence=40, overlap=30).save("prediction.jpg")
-  prediction = Image.open("prediction.jpg")
+  model.predict(uploaded_file, confidence=40, overlap=30).save("./prediction.jpg")
+  prediction = Image.open("./prediction.jpg")
         #st.image(prediction)
 if __name__ == '__main__':
     main()
