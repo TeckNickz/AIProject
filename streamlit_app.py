@@ -6,19 +6,17 @@ project = rf.workspace().project("kitesboundingbox")
 model = project.version(1).model
 
 def main():
-  # Add in location to select image.
   st.sidebar.write('#### Select an image to upload.')
-  uploaded_file = st.sidebar.file_uploader('',
-                                         type=['png', 'jpg', 'jpeg'],
-                                         accept_multiple_files=False)
-
+  uploaded_file = st.sidebar.file_uploader('',type=['png', 'jpg', 'jpeg'],accept_multiple_files=False)
   if uploaded_file is not None:
-    img = load_image(image_file)
-        with open(os.path.join("default",uploaded_file.name),"wb") as f: 
-            f.write(image_file.getbuffer())  
+    file_details = {"FileName":image_file.name,"FileType":image_file.type}
+    st.write(file_details)
+    img = load_image(uploaded_file)
+    with open(os.path.join("default",uploaded_file.name),"wb") as f: 
+        f.write(image_file.getbuffer())  
   # visualize your prediction
-  model.predict(uploaded_file, confidence=40, overlap=30).save("prediction.jpg")
-  prediction = Image.open("prediction.jpg")
+  #model.predict(uploaded_file, confidence=40, overlap=30).save("prediction.jpg")
+  #prediction = Image.open("prediction.jpg")
         #st.image(prediction)
 if __name__ == '__main__':
     main()
