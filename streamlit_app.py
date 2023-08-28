@@ -22,7 +22,7 @@ def main():
     model = project.version(1).model
     # visualize your prediction
     model.predict(image, confidence=40, overlap=30).save("./prediction/prediction.jpg")
-    prediction = Image.open("./prediction/prediction.jpg")
-    st.image(prediction)
+    #prediction = Image.open("./prediction/prediction.jpg")
+    #st.image(prediction)
 if __name__ == '__main__':
     main()
