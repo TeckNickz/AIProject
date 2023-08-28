@@ -12,7 +12,7 @@ def main():
     st.write('#### Select an image to upload.')
     uploaded_file = st.file_uploader('',type=['png', 'jpg', 'jpeg'],accept_multiple_files=False)
     if uploaded_file is not None:
-        oldext = os.path.splitext(uploaded_file)[1]
+        oldext = os.splitext(uploaded_file)[1]
         os.rename(file, default + oldext)
         file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type}
         st.write(file_details)
