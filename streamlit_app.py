@@ -14,7 +14,7 @@ def main():
 
   if uploaded_file is not None:
     img = load_image(image_file)
-        with open(os.path(uploaded_file.name),"wb") as f: 
+        with open(os.path.join("default",uploaded_file.name),"wb") as f: 
             f.write(image_file.getbuffer())  
   # visualize your prediction
   model.predict(uploaded_file, confidence=40, overlap=30).save("prediction.jpg")
