@@ -19,9 +19,11 @@ def main():
     file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type}
     img = load_image(uploaded_file)
     with open(os.path.join("default",uploaded_file.name),"wb") as f: 
-        f.write(uploaded_file.getbuffer())  
+        f.write(uploaded_file.getbuffer())
+
+  image =load_image(uploaded_file)
   # visualize your prediction
-  model.predict(uploaded_file, confidence=40, overlap=30).save("./prediction.jpg")
+  model.predict(image, confidence=40, overlap=30).save("./prediction.jpg")
   prediction = Image.open("./prediction.jpg")
         #st.image(prediction)
 if __name__ == '__main__':
