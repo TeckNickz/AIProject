@@ -18,7 +18,7 @@ def main():
         with open(os.path.join("default",uploaded_file.name),"wb") as f: 
             f.write(uploaded_file.getbuffer())
         oldext = os.path.splitext("default/"+uploaded_file.name)[1]
-        os.rename(uploaded_file, "default" + oldext)
+        os.rename("default/"+uploaded_file.name, "default" + oldext)
     image =load_image(uploaded_file)
     rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
     project = rf.workspace().project("kitesboundingbox")
