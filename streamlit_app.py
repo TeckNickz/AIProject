@@ -14,6 +14,6 @@ def main():
   # visualize your prediction
   model.predict(uploaded_file, confidence=40, overlap=30).save("prediction.jpg")
   prediction = Image.open("prediction.jpg")
-        st.image(prediction)
+        #st.image(prediction)
 if __name__ == '__main__':
     main()
