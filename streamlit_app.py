@@ -13,7 +13,7 @@ def main():
     uploaded_file = st.file_uploader('',type=['png', 'jpg', 'jpeg'],accept_multiple_files=False)
     if uploaded_file is not None:
         file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type}
-        st_write(file_details)
+        st.write(file_details)
         img = load_image(uploaded_file)
         with open(os.path.join("default",uploaded_file.name),"wb") as f: 
             f.write(uploaded_file.getbuffer())
