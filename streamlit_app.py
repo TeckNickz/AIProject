@@ -19,9 +19,10 @@ def main():
     model = project.version(1).model
     generatebutton = st.button('Generatie prediction')
     if generatebutton:
-        # visualize your prediction
-        model.predict(uploaded_file, confidence=10, overlap=30).save("prediction.jpg")
-        prediction = Image.open("prediction.jpg")
-        st.image(prediction)
+          # Use the saved image for prediction
+          prediction_path = os.path.join("default", "uploaded_image.jpg")
+          model.predict(prediction_path, confidence=10, overlap=30).save("prediction.jpg")
+          prediction = Image.open("prediction.jpg")
+          st.image(prediction)
 if __name__ == '__main__':
     main()
