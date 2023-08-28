@@ -15,7 +15,7 @@ def main():
         file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type}
         st.write(file_details)
         img = load_image(uploaded_file)
-        with open(os.path.join("default",uploaded_file.name),"wb") as f: 
+        with open(os.path.join("default","default." + upload_file.type ),"wb") as f: 
             f.write(uploaded_file.getbuffer())
     image =load_image(uploaded_file)
     rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
