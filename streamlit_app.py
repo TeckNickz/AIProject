@@ -11,6 +11,11 @@ def main():
   uploaded_file = st.sidebar.file_uploader('',
                                          type=['png', 'jpg', 'jpeg'],
                                          accept_multiple_files=False)
+
+  if uploaded_file is not None:
+    img = load_image(image_file)
+        with open(os.path.join("tempDir",uploaded_file.name),"wb") as f: 
+            f.write(image_file.getbuffer())  
   # visualize your prediction
   model.predict(uploaded_file, confidence=40, overlap=30).save("prediction.jpg")
   prediction = Image.open("prediction.jpg")
