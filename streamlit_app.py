@@ -5,6 +5,10 @@ rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
 project = rf.workspace().project("kitesboundingbox")
 model = project.version(1).model
 
+def load_image(uploaded_file):
+    img = Image.open(uploaded_file)
+    return img
+  
 def main():
   st.sidebar.write('#### Select an image to upload.')
   uploaded_file = st.sidebar.file_uploader('',type=['png', 'jpg', 'jpeg'],accept_multiple_files=False)
