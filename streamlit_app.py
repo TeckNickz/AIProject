@@ -6,6 +6,7 @@ import os
 @st.cache
 def load_image(image_file):
     img = Image.open(image_file)
+    img.tobytes()
     return img
   
   
