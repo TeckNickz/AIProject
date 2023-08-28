@@ -4,10 +4,10 @@ from PIL import Image
 import os
 
 @st.cache
-def load_image(image_file):
-    img = Image.open(image_file)
-    img.tobytes()
-    return img
+def load_image(uploaded_file):
+    img = Image.open(uploaded_file)
+    img_bytes = img.tobytes()
+    return img_bytes
   
   
 def main():
