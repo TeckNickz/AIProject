@@ -12,10 +12,12 @@ def main():
     st.write('#### Select an image to upload.')
     uploaded_file = st.file_uploader('',type=['png', 'jpg', 'jpeg'],accept_multiple_files=False)
     if uploaded_file is not None:
+        oldext = os.path.splitext(uploaded_file)[1]
+        os.rename(file, default + oldext)
         file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type}
         st.write(file_details)
         img = load_image(uploaded_file)
-        with open(os.path.join("default","default"),"wb") as f: 
+        with open(os.path.join("default",uploaded_file.name),"wb") as f: 
             f.write(uploaded_file.getbuffer())
     image =load_image(uploaded_file)
     rf = Roboflow(api_key="L1fLCebyFsX8pYKg7N0t")
